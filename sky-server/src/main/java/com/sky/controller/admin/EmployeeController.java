@@ -110,4 +110,35 @@ public class EmployeeController {
         employeeService.startOrStop(status,id);
         return Result.success();
     }
+
+    /**
+    * @author Banner
+    * @time 14:27
+    * @Param id
+    * @return com.sky.result.Result
+    * @Description 根据ID查询员工信息
+    */
+    @GetMapping("/{id}")
+    @ApiOperation("根据ID查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id){
+        log.info("根据ID查询员工信息,ID:{}",id);
+        Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+
+    /**
+    * @author Banner
+    * @time 14:39
+    * @Param employeeDTO
+    * @return com.sky.result.Result
+    * @Description 编辑员工信息
+    */
+    @PutMapping
+    @ApiOperation("编辑员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO){
+        log.info("编辑员工信息:{}",employeeDTO);
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
 }
