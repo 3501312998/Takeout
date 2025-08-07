@@ -95,4 +95,19 @@ public class EmployeeController {
         PageResult pag = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pag);
     }
+
+    /**
+    * @author Banner
+    * @time 12:12
+    * @Param statusid
+    * @return com.sky.result.Result
+    * @Description 修改员工状态
+    */
+    @PostMapping("/status/{status}")
+    @ApiOperation("启用/禁用 员工状态")
+    public Result startOrStop(@PathVariable Integer status, Long id){
+        log.info("员工状态：{}，员工id：{}",status,id);
+        employeeService.startOrStop(status,id);
+        return Result.success();
+    }
 }

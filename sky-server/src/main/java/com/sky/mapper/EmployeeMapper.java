@@ -31,4 +31,13 @@ public interface EmployeeMapper {
     * @Description 员工信息分页条件查询
     */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+    * @author Banner
+    * @time 12:17
+    * @Param employee
+    * @return
+    * @Description 根据员工ID修改员工信息
+    */
+    void update(Employee employee);
 }

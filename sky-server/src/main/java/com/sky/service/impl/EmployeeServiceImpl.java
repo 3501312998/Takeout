@@ -57,6 +57,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
     * @author Banner
+    * @time 12:14
+    * @Param statusid
+    * @return
+    * @Description 修改员工状态
+    */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        //两种创建对象的方法,用那种都行
+        Employee employee = Employee.builder().status(status).id(id).build();
+        //更新数据
+        employeeMapper.update(employee);
+    }
+
+    /**
+    * @author Banner
     * @time 23:25
     * @Param employeePageQueryDTO
     * @return com.sky.result.PageResult

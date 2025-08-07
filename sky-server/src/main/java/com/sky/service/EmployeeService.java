@@ -32,4 +32,13 @@ public interface EmployeeService {
     * @Description 员工信息分页查询
     */
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+    * @author Banner
+    * @time 12:14
+    * @Param statusid
+    * @return
+    * @Description 修改员工状态
+    */
+    void startOrStop(Integer status, Long id);
 }
