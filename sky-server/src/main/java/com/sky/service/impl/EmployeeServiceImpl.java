@@ -71,13 +71,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.update(employee);
     }
 
-    /**
-    * @author Banner
-    * @time 14:29
-    * @Param id
-    * @return com.sky.entity.Employee
-    * @Description 根据ID查询员工信息
-    */
+   /**
+   * @author Banner
+   * @time 17:07 2025/8/7
+   * @Param id
+   * @return com.sky.entity.Employee
+   * @Description 根据ID查询员工信息
+   */
     @Override
     public Employee getById(Long id) {
         Employee employee = employeeMapper.getById(id);
